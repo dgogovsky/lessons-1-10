@@ -1,8 +1,0 @@
-<IfModule dir_module>
-    DirectoryIndex index.php
-</IfModule>
-
-ErrorDocument 404 '404 page not found'
-
-RewriteEngine on
-RewriteRule ^img.test.local/([a-z])([0-9][0-9]).jpg$ http://test.local/img.test.local/goods/$1/$2.jpg
