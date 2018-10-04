@@ -1,0 +1,9 @@
+<IfModule dir_module>
+    DirectoryIndex index.php
+</IfModule>
+php_flag engine 0
+AddType "text/html" .php
+ErrorDocument 404 '404 page not found'
+
+
+
