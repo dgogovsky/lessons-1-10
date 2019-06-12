@@ -2,30 +2,29 @@
 
 
 class FunctionPow {
-    public $x;
-    public $mn;
-    public $n;
-  
-    public function __construct($x = 0,$mn = 0,$n =0) {
+    public $x; //возводимое
+    public $n;  //степень
+    
+    public function __construct($x = 0, $n =0) {
         $this->x = $x;
-        $this->mn = $mn;
         $this->n = $n;
-        
-    }
-    public function Power($x,$mn,$n) {
-       if ($n>=1){for ($i=1; $i<$n; $i++){$x*=$mn;}
-        return $this->x=$x;}
+       }
+    public function Power($x,$n) {
+        $res=$x;
+       if ($n>=1){for ($i=1; $i<$n; $i++){
+           $res*=$x;}
+        return $this->res=$res;}
     if ($n==0){
     return 1;}
     if ($n<0){
-    return $this->Power(1/$x, 1/$mn, -$n);} 
+    return $this->Power(1/$x,-$n);} 
     }
 }
 
 $result = new FunctionPow;
 
 
-print "Функция возведения в степень результат ".$result->Power(2,2,-2)."</br> ";
+print "Функция возведения в степень результат ".$result->Power(2,-2)."</br> ";
 
 class FunctionMin {
     public $arr_min= [];

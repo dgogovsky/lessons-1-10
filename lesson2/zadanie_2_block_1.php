@@ -68,21 +68,22 @@ print('Максимальная площадь, меньшая '.$S_ogranichitel
 echo "</br>";
 
 //начало блока по возведению в степень
-function Power($x,$mn,$n) //функция возведения в степень, x-само число, mn = x нужен для корректного умножения, n - степень
+function Power($x,$n) //функция возведения в степень, x-само число, n - степень
 {
-if ($n>=1){for ($i=1; $i<$n; $i++){$x*=$mn;}
-        return $x;}
-    if ($n==0){
+    $res=$x;
+if ($n>=1){for ($i=1; $i<$n; $i++){
+    $res*=$x;
+}
+    return $res;}
+if ($n==0){
     return 1;}
-    if ($n<0){
-    return Power(1/$x, 1/$mn, -$n);}
+if ($n<0){
+    return Power(1/$x, -$n);}
 }
 //тест возведения в степень
 $chislo=2;
 $stepen=-3;
-$itog=0;
-
-$itog=Power($chislo,$chislo,$stepen);
+$itog=Power($chislo,$stepen);
 
 print(' Число '.$chislo.' в степени '.$stepen.' = '.$itog.' //');
 //конец блока по возв. в степень
