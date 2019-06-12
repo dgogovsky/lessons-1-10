@@ -15,8 +15,8 @@ function inverse(string $str, string $substr) {
 
 //тестировать здесь
 try {
-$str1 = 'abcdbce';
-$substr1 = 'bc';
+$str1 = 'afcdeesdfce';
+$substr1 = 'fc';
 $str2 = inverse($str1, $substr1);
 } catch (Exception $e){
     echo 'Не соответствует условию ', $e->getMessage(), "\n";
@@ -47,8 +47,9 @@ function arrkeysort(array $arrayforsort, $orderby) {   //функция для �
 
 //тестировать здесь
 try {
-    $arrtest = [[a => 2, b => 12, c => 15], [a => 32, b => 2, c => 10], [a => 3, b => 1]];
-    arrkeysort($arrtest, a); //первый аргумент сам массив, второй - ключ для сортировки
+    $arrtest = [['a' => 2, 'b' => 12, 'c' => 15], ['a' => 32, 'b' => 2, 'c' => 10], ['a' => 3, 'b' => 1]];
+   
+    arrkeysort($arrtest, 'b'); //первый аргумент сам массив, второй - ключ для сортировки
 } catch (Exception $e) {
     echo 'Ошибка, убедитесь что такой ключ есть в массиве ', $e->getMessage(), "\n";
 } 
