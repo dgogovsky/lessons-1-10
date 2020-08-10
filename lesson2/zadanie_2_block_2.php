@@ -2,39 +2,37 @@
 
 
 class FunctionPow {
-    public $x;
-    public $mn;
-    public $n;
-  
-    public function __construct($x = 0,$mn = 0,$n =0) {
+    public $x; //возводимое
+    public $n;  //степень
+    
+    public function __construct($x = 0, $n =0) {
         $this->x = $x;
-        $this->mn = $mn;
         $this->n = $n;
-        
-    }
-    public function Power($x,$mn,$n) {
-       if ($n>=1){for ($i=1; $i<$n; $i++){$x*=$mn;}
-        return $this->x=$x;}
+       }
+    public function Power($x,$n) {
+        $res=$x;
+       if ($n>=1){for ($i=1; $i<$n; $i++){
+           $res*=$x;}
+        return $this->res=$res;}
     if ($n==0){
     return 1;}
     if ($n<0){
-    return $this->Power(1/$x, 1/$mn, -$n);} 
+    return $this->Power(1/$x,-$n);} 
     }
 }
 
 $result = new FunctionPow;
 
 
-print "Функция возведения в степень результат ".$result->Power(2,2,-2)."</br> ";
+print "Функция возведения в степень результат ".$result->Power(2,-2)."</br> ";
 
 class FunctionMin {
-    public $arr_min=array();
-    
+    public $arr_min= [];
     public function __construct($arr_min= []){
     $this->arr_min = $arr_min;}
-public function MinMassive(Array $arr_min){
+public function MinMassive($arr_min){
      arsort($arr_min);
-     return array_pop($this->arr_min=$arr_min);
+     return array_pop($arr_min);
     
 }
 }
@@ -112,8 +110,7 @@ public function __construct($a=0,$b=0,$c=0, $d=[]){
 
 public function F1F2($a,$b,$c, Array $d) {
 
-	$f1=0;
-	$f2=0;
+	
 	$f1 = new Formula1;
 	$f2 = new Formula_2;
 	return print "Результат f1: ".$f1->Formula($a,$b,$c,$d)."</br> "."Результат f2: ".$f2->Formula2($a,$b,$c, $d)."</br> "; 
@@ -155,6 +152,6 @@ foreach (array_chunk($input_arr, $columns) as $part) {
 
 $test_array=new Printtable;
 $test_array->getValue([1,2,3,4,5,6,7,8,9,10,11,12],6);
-
+//commit
 
 
